@@ -66,20 +66,27 @@
     }
 
     footer {
-      margin-top: 5rem;
-      padding: 2rem 1.5rem;
-      border-top: 1px solid #ddd;
-      text-align: left;
-      font-size: 0.9rem;
+      position: fixed; /* stick to viewport */
+      bottom: 2rem;    /* distance from bottom */
+      right: 2rem;     /* distance from right */
+      text-align: right;
+      font-family: 'Poppins', sans-serif;
       color: #555;
     }
 
-    a {
-      color: #007acc;
-      text-decoration: none;
+    footer h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+      color: #ffffff;
     }
 
-    a:hover {
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
       text-decoration: underline;
     }
 
@@ -98,6 +105,56 @@
         left: 1.5rem;
       }
     }
+    .trust-section {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin: 4rem auto 2rem auto;
+      max-width: 900px;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #444;
+    }
+
+    .trust-item h4 {
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: #006dcc;
+      font-size: 1.55rem;
+    }
+
+    .trust-item p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1rem;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Sora', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .trust-section {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .trust-item p {
+        max-width: 100%;
+      }
+    }
+
+    .color-block {
+      width: 100%;
+      height: 150px;            /* taller makes more visible overlap */
+      background: #0092cc;      /* or your accent/gradient */
+      margin-top: 80px;        /* negative pushes it up under the trust section */
+      z-index: 0;               /* stay behind trust items if needed */
+      position: relative;
+    }
+
+
+
   </style>
 </head>
 <body>
@@ -111,9 +168,29 @@
     </p>
   </main>
 
+  <section class="trust-section">
+    <div class="trust-item">
+      <h4>Built by</h4>
+      <p>Pioneers in Conversational AI</p>
+      <!-- Or insert logo img here -->
+    </div>
+    <div class="trust-item">
+      <h4>Partnering with</h4>
+      <p>The <strong>most forward thinking</strong> B2B GTM organizations in the world</p>
+      <!-- Or insert partner logos here -->
+    </div>
+    <div class="trust-item">
+      <h4>Advised by</h4>
+      <p>Seasoned Marketing & Revenue Leaders</p>
+      <!-- Or insert investor logos here -->
+    </div>
+  </section>
+  
+  <div class="color-block"></div>
+
   <footer>
-    📧 <a href="mailto:hello@chromite.ai">hello@chromite.ai</a> &nbsp; | &nbsp;
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+    <h4>Contact</h4>
+    <a href="mailto:hello@chromite.ai">hello@chromite.ai</a>
   </footer>
 
 </body>
